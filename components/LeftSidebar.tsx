@@ -79,12 +79,13 @@ export function LeftSidebar({
   };
 
   return (
-    <>
+    <div className="relative flex-shrink-0 h-full" style={{ width: isOpen ? '18%' : '0', minWidth: isOpen ? '280px' : '0' }}>
       {/* Toggle button when closed */}
       {!isOpen && (
         <button
           onClick={onToggle}
           className="absolute left-0 top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-r-lg p-2 shadow-md hover:bg-accent transition-colors"
+          style={{ transform: 'translateX(0) translateY(-50%)' }}
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -92,10 +93,9 @@ export function LeftSidebar({
 
       {/* Sidebar */}
       <div
-        className={`absolute left-0 top-0 h-full bg-card border-r border-border z-20 transition-transform duration-300 flex flex-col ${
-          isOpen ? 'translate-x-0' : '-translate-x-full'
+        className={`h-full bg-card border-r border-border transition-all duration-300 flex flex-col overflow-hidden ${
+          isOpen ? 'w-full opacity-100' : 'w-0 opacity-0'
         }`}
-        style={{ width: '18%', minWidth: '280px' }}
       >
         {/* Header with close button */}
         <div className="flex items-center justify-between p-4 border-b border-border">
@@ -195,6 +195,6 @@ export function LeftSidebar({
           </div>
         </ScrollArea>
       </div>
-    </>
+    </div>
   );
 }

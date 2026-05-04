@@ -44,12 +44,12 @@ export function RightSidebar({
     const totalKm = (route.totalDistance / 1000).toFixed(1);
 
     return (
-      <>
+      <div className="relative flex-shrink-0 h-full" style={{ width: isOpen ? '18%' : '0', minWidth: isOpen ? '280px' : '0' }}>
         {/* Toggle button when closed */}
         {!isOpen && (
           <button
             onClick={onToggle}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-l-lg p-2 shadow-md hover:bg-accent transition-colors"
+            className="absolute right-full top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-l-lg p-2 shadow-md hover:bg-accent transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -57,10 +57,9 @@ export function RightSidebar({
 
         {/* Sidebar */}
         <div
-          className={`absolute right-0 top-0 h-full bg-card border-l border-border z-20 transition-transform duration-300 flex flex-col ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`h-full bg-card border-l border-border transition-all duration-300 flex flex-col overflow-hidden ${
+            isOpen ? 'w-full opacity-100' : 'w-0 opacity-0'
           }`}
-          style={{ width: '18%', minWidth: '280px' }}
         >
           {/* Header */}
           <div className="flex items-center justify-between p-4 border-b border-border">
@@ -124,19 +123,19 @@ export function RightSidebar({
             </div>
           </ScrollArea>
         </div>
-      </>
+      </div>
     );
   }
 
   // If showing place details
   if (selectedPlace) {
     return (
-      <>
+      <div className="relative flex-shrink-0 h-full" style={{ width: isOpen ? '18%' : '0', minWidth: isOpen ? '280px' : '0' }}>
         {/* Toggle button when closed */}
         {!isOpen && (
           <button
             onClick={onToggle}
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-l-lg p-2 shadow-md hover:bg-accent transition-colors"
+            className="absolute right-full top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-l-lg p-2 shadow-md hover:bg-accent transition-colors"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
@@ -144,10 +143,9 @@ export function RightSidebar({
 
         {/* Sidebar */}
         <div
-          className={`absolute right-0 top-0 h-full bg-card border-l border-border z-20 transition-transform duration-300 flex flex-col ${
-            isOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`h-full bg-card border-l border-border transition-all duration-300 flex flex-col overflow-hidden ${
+            isOpen ? 'w-full opacity-100' : 'w-0 opacity-0'
           }`}
-          style={{ width: '18%', minWidth: '280px' }}
         >
           {/* Header with close button */}
           <div className="flex items-center justify-between p-4 border-b border-border">
@@ -243,18 +241,18 @@ export function RightSidebar({
             </Button>
           </div>
         </div>
-      </>
+      </div>
     );
   }
 
   // Empty state when no place is selected
   return (
-    <>
+    <div className="relative flex-shrink-0 h-full" style={{ width: isOpen ? '18%' : '0', minWidth: isOpen ? '280px' : '0' }}>
       {/* Toggle button when closed */}
       {!isOpen && (
         <button
           onClick={onToggle}
-          className="absolute right-0 top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-l-lg p-2 shadow-md hover:bg-accent transition-colors"
+          className="absolute right-full top-1/2 -translate-y-1/2 z-30 bg-card border border-border rounded-l-lg p-2 shadow-md hover:bg-accent transition-colors"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -262,10 +260,9 @@ export function RightSidebar({
 
       {/* Sidebar */}
       <div
-        className={`absolute right-0 top-0 h-full bg-card border-l border-border z-20 transition-transform duration-300 flex flex-col ${
-          isOpen ? 'translate-x-0' : 'translate-x-full'
+        className={`h-full bg-card border-l border-border transition-all duration-300 flex flex-col overflow-hidden ${
+          isOpen ? 'w-full opacity-100' : 'w-0 opacity-0'
         }`}
-        style={{ width: '18%', minWidth: '280px' }}
       >
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border">
@@ -287,6 +284,6 @@ export function RightSidebar({
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
