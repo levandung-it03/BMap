@@ -5,87 +5,49 @@
   flex-direction: column;
   background: var(--background);
   color: var(--foreground);
-
-  .discovery_shell-header {
-    border-bottom: 1px solid var(--border);
-    background: var(--card);
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1rem;
-    z-index: 10;
-  }
-
-  .discovery_shell-header-title {
-    font-size: 1.125rem;
-    font-weight: 700;
-  }
-
-  .discovery_shell-header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .discovery_shell-main {
-    flex: 1;
-    display: flex;
-    overflow: hidden;
-  }
-
-  .discovery_shell-sidebar {
-    background: var(--card);
-  }
-
-  .discovery_shell-sidebar_mobile-closed {
-    display: none;
-  }
-
-  .discovery_shell-sidebar_mobile-open {
-    position: absolute;
-    inset: 0;
-    z-index: 20;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .discovery_shell-detail {
-    display: none;
-    width: 24rem;
-    border-right: 1px solid var(--border);
-    flex-direction: column;
-    background: color-mix(in oklch, var(--muted) 12%, var(--background));
-  }
-
-  .discovery_shell-detail-placeholder {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    padding: 1rem;
-    text-align: center;
-  }
-
-  .discovery_shell-detail-hint {
-    color: var(--muted-foreground);
-    font-size: 0.875rem;
-  }
-
-  .discovery_shell-map {
-    flex: 1;
-    min-width: 0;
-  }
+  overflow: hidden;
 }
 
-.discovery_shell-map {
+.discovery_shell-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+.discovery_shell-header-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.discovery_shell-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.discovery_shell-main {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.discovery_shell-map-container {
+  flex: 1;
+  position: relative;
   height: 100%;
   width: 100%;
+}
 
-  .leaflet-container {
-    height: 100%;
-    width: 100%;
-  }
+.discovery_shell-map-container .leaflet-container {
+  height: 100%;
+  width: 100%;
 }
 
 .discovery_shell-loading {
@@ -96,52 +58,24 @@
   align-items: center;
   justify-content: center;
   background: var(--background);
-
-  .discovery_shell-loading-inner {
-    width: 100%;
-    max-width: 28rem;
-  }
-
-  .discovery_shell-loading-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    text-align: center;
-  }
 }
 
-@media (min-width: 768px) {
-  .discovery_shell {
-    .discovery_shell-sidebar {
-      width: 24rem;
-      display: flex;
-      flex-direction: column;
-      border-right: 1px solid var(--border);
-    }
-
-    .discovery_shell-sidebar_mobile-closed {
-      display: flex;
-    }
-
-    .discovery_shell-sidebar_mobile-open {
-      position: relative;
-      inset: auto;
-      z-index: auto;
-    }
-
-    .discovery_shell-detail {
-      display: flex;
-    }
-  }
+.discovery_shell-loading-inner {
+  width: 100%;
+  max-width: 28rem;
+  padding: 1rem;
 }
 
-.discovery_shell-header-actions .discovery_shell-menu-button {
-  width: 2.5rem;
-  height: 2.5rem;
+.discovery_shell-loading-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-@media (min-width: 768px) {
-  .discovery_shell-header-actions .discovery_shell-menu-button {
-    display: none;
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .discovery_shell-header-title {
+    font-size: 1rem;
   }
 }
