@@ -1,0 +1,81 @@
+.discovery_shell {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: var(--background);
+  color: var(--foreground);
+  overflow: hidden;
+}
+
+.discovery_shell-header {
+  border-bottom: 1px solid var(--border);
+  background: var(--card);
+  height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  z-index: 50;
+  flex-shrink: 0;
+}
+
+.discovery_shell-header-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.discovery_shell-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.discovery_shell-main {
+  flex: 1;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.discovery_shell-map-container {
+  flex: 1;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.discovery_shell-map-container .leaflet-container {
+  height: 100%;
+  width: 100%;
+}
+
+.discovery_shell-loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--background);
+}
+
+.discovery_shell-loading-inner {
+  width: 100%;
+  max-width: 28rem;
+  padding: 1rem;
+}
+
+.discovery_shell-loading-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .discovery_shell-header-title {
+    font-size: 1rem;
+  }
+}
